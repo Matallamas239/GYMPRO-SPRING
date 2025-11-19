@@ -1,0 +1,236 @@
+/* Reset básico para que los estilos sean consistentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos de la página general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #12121e;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Estilos de encabezado y secciones */
+.encabezado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.encabezado h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.encabezado p {
+    color: #a0a0a0;
+}
+
+.seccion-formulario,
+.seccion-tabla {
+    background-color: #1e1e2d;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a4e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.encabezado-seccion,
+.encabezado-seccion-tabla {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.encabezado-seccion h2,
+.encabezado-seccion-tabla h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.icono {
+    margin-right: 10px;
+    color: #5b469e;
+    font-size: 1.2em;
+}
+
+/* Estilos del formulario */
+.grupo-formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b0b0b0;
+}
+
+.grupo-formulario input,
+.grupo-formulario select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3a3a4e;
+    border-radius: 4px;
+    background-color: #2a2a3c;
+    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus {
+    outline: none;
+    border-color: #5b469e;
+}
+
+/* Botones */
+.boton-principal {
+    background-color: #5b469e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.boton-principal:hover {
+    background-color: #6c54b2;
+}
+
+.boton-principal .icono {
+    color: white;
+    margin-right: 8px;
+}
+
+/* Estilos de la tabla */
+.encabezado-seccion-tabla {
+    justify-content: space-between;
+}
+
+.caja-busqueda {
+    position: relative;
+    width: 250px;
+}
+
+.caja-busqueda input {
+    width: 100%;
+    padding: 8px 35px 8px 12px;
+    border: 1px solid #3a3a4e;
+    border-radius: 4px;
+    background-color: #2a2a3c;
+    color: #e0e0e0;
+}
+
+.caja-busqueda .icono {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0a0a0;
+}
+
+.tabla-miembros {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla-miembros th,
+.tabla-miembros td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #3a3a4e;
+}
+
+.tabla-miembros th {
+    color: #a0a0a0;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.tabla-miembros tbody tr:hover {
+    background-color: #2a2a3c;
+}
+
+/* Etiquetas (badges) */
+.etiqueta {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #1e1e2d;
+}
+
+.etiqueta-premium { background-color: #7b68ee; }
+.etiqueta-basica { background-color: #4682b4; }
+.etiqueta-vip { background-color: #ffd700; }
+.etiqueta-activo { background-color: #5cb85c; }
+.etiqueta-vencido { background-color: #d9534f; }
+.etiqueta-inactivo { background-color: #808080; }
+
+/* Botones de acción en la tabla */
+.acciones {
+    white-space: nowrap;
+}
+
+.boton-accion {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+    color: white;
+}
+
+.boton-editar {
+    background-color: #4caf50;
+}
+
+.boton-eliminar {
+    background-color: #f44336;
+}
+
+.boton-editar:hover {
+    background-color: #40916c;
+}
+
+.boton-eliminar:hover {
+    background-color: #c74d4d;
+}
+
+.boton-accion .icono {
+    margin-right: 5px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .encabezado-seccion-tabla {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .caja-busqueda {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
