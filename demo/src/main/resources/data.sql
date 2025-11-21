@@ -1,81 +1,28 @@
-INSERT INTO  estudiante 
- (id, nombre, apellido, codigo, fecha_nacimiento) 
- VALUES (1, 'Roberto Geronimo','Zarate Mendoza','C28933', '1982-01-01');
-
-INSERT INTO  estudiante 
- (id, nombre, apellido, codigo, fecha_nacimiento) 
- VALUES (2, 'Mercedes','Mendoza','C11111','1980-06-06');
-INSERT INTO  estudiante 
- (id, nombre, apellido, codigo, fecha_nacimiento) 
- VALUES (3, 'Edgar','Mendoza','C22222','1952-02-19');  
-
-INSERT INTO  tipo_producto
- ( nombre, fechaCreacion) 
- VALUES ('Detergentes en polvo','2025-02-02');
-
-INSERT INTO  tipo_producto
- ( nombre, fechaCreacion) 
- VALUES ('Detergentes liquidos','2025-02-04');
-
-INSERT INTO  tipo_producto  
- ( nombre, fechaCreacion) 
- VALUES ('Detergentes enzimaticos ','2025-02-06');
-
-INSERT INTO  producto
-( nombre, fecha_creacion, id_tipo_producto) 
- values ('Detergente en polvo Ariel','2025-02-02',1);
-
-INSERT INTO  producto 
-( nombre, fecha_creacion, id_tipo_producto) 
-values ('Detergente en polvo Ace','2025-02-04',1);
-
-INSERT INTO  producto 
-( nombre, fecha_creacion, id_tipo_producto) 
- values ('Detergente en polvo Omo','2025-02-06',1);
-
-INSERT INTO  producto
-( nombre, fecha_creacion, id_tipo_producto) 
- values ('Detergente liquido Ariel','2025-02-02',2);
-
-INSERT INTO  producto
-( nombre, fecha_creacion, id_tipo_producto )
-values ('Detergente liquido Ace','2025-02-04',2);
-
----------------------------------------------------------
--- INSERTAR USUARIOS
----------------------------------------------------------
-INSERT INTO usuarios (nombre_completo, numero_telefono, DNI, email, password, rol, activo)
+-- Usuarios de prueba
+INSERT INTO usuarios (nombre_completo, numero_telefono, dni, email, password, rol, activo)
 VALUES
-('Juan Pérez', '987654321', '99987548', 'juan@example.com', '123456', 'empleado', TRUE),
-('María López', '912345678', '48763159', 'maria@example.com', 'abcdef', 'cliente', TRUE),
-('Carlos Díaz', '999888777', '47513468', 'carlos@example.com', 'qwerty', 'cliente', TRUE);
+('Admin Principal', '987654321', '00000001', 'admin@gym.com', 'admin123', 'admin', TRUE),
+('Carlos Pérez', '912345678', '12345678', 'carlos@gym.com', '12345', 'personal', TRUE),
+('Ana Gómez', '987123456', '87654321', 'ana@gym.com', '12345', 'cliente', TRUE);
 
----------------------------------------------------------
--- INSERTAR PLANES
----------------------------------------------------------
+-- Planes
 INSERT INTO plan (nombre, descripcion, precio, duracion_dias, activo)
 VALUES
-('Plan Mensual', 'Acceso total por 30 días', 80.00, 30, TRUE),
-('Plan Trimestral', 'Acceso total por 90 días', 200.00, 90, TRUE),
-('Plan Anual', 'Acceso total por 365 días', 750.00, 365, TRUE);
+('Plan Básico', 'Acceso total por 30 días', 50.00, 30, TRUE),
+('Plan Premium', 'Acceso total + clases + sauna', 80.00, 30, TRUE),
+('Plan VIP', 'Todo incluido + entrenador personal', 120.00, 30, TRUE);
 
----------------------------------------------------------
--- INSERTAR SUSCRIPCIONES
----------------------------------------------------------
-INSERT INTO suscripcion (id_usuario, id_plan, fecha_inicio, fecha_fin, activo, monto_pagado)
+-- Suscripción de ejemplo para Ana (cliente id = 3)
+INSERT INTO suscripcion (id_usuario, id_plan, fecha_inicio, fecha_fin, activa)
 VALUES
-(1, 1, DATE '2024-01-01', DATE '2024-01-31', TRUE, 80.00),
-(2, 2, DATE '2024-02-01', DATE '2024-05-01', TRUE, 200.00),
-(3, 3, DATE '2024-01-15', DATE '2025-01-15', TRUE, 750.00);
+(3, 1, '2025-01-15', '2025-02-15', TRUE);
 
----------------------------------------------------------
--- INSERTAR ASISTENCIAS
----------------------------------------------------------
+-- Pago programado (no pagado todavía)
+INSERT INTO suscripcion_pago (id_suscripcion, fecha_programada, estado, monto, metodo_pago)
+VALUES
+(1, '2025-02-15', 'pendiente', 50.00, NULL);
+
+-- Asistencia del personal (Carlos id=2)
 INSERT INTO asistencia (id_usuario, fecha, hora_ingreso, hora_salida)
 VALUES
-(1, DATE '2024-01-05', TIMESTAMP '2024-01-05 08:00:00', TIMESTAMP '2024-01-05 10:00:00'),
-(1, DATE '2024-01-06', TIMESTAMP '2024-01-06 09:15:00', TIMESTAMP '2024-01-06 11:00:00'),
-
-(2, DATE '2024-02-10', TIMESTAMP '2024-02-10 07:50:00', TIMESTAMP '2024-02-10 09:30:00'),
-
-(3, DATE '2024-03-01', TIMESTAMP '2024-03-01 18:00:00', TIMESTAMP '2024-03-01 20:00:00');
+(2, '2025-01-20', '2025-01-20 08:01:00', '2025-01-20 16:10:00');

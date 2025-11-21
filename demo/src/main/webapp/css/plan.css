@@ -1,0 +1,272 @@
+/* ==============================
+   ESTILOS GENERALES (GUIADOS POR main.css)
+   ============================== */
+
+body {
+    background-color: #2b2e38;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenedor {
+    margin-left: 20px; /* Sidebar */
+    padding: 30px 40px;
+}
+
+/* ==============================
+   ENCABEZADO
+   ============================== */
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.encabezado .icono {
+    font-size: 45px;
+    color: #7364cc;
+}
+
+.encabezado h1 {
+    margin-top: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.encabezado p {
+    color: #aaa;
+}
+
+
+/* ==============================
+   FORMULARIO
+   ============================== */
+
+.formulario-plan {
+    background-color: #383b48;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    margin-bottom: 45px;
+    border: 1px solid #444752;
+}
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion .icono {
+    font-size: 22px;
+    color: #7364cc;
+}
+
+.titulo-seccion h2 {
+    font-size: 22px;
+    color: #fff;
+    margin: 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-bottom: 8px;
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #2b2e38;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7364cc;
+}
+
+/* Botón principal */
+.boton-principal {
+    margin-top: 20px;
+    background-color: #7364cc;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boton-principal:hover {
+    background-color: #8575e4;
+}
+
+
+/* ==============================
+   CARDS DE PLANES
+   ============================== */
+
+.lista-cards {
+    margin-top: 30px;
+}
+
+.encabezado-seccion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.encabezado-seccion .icono {
+    color: #7364cc;
+}
+
+.encabezado-seccion h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* GRID DE CARDS */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.card-plan {
+    background-color: #383b48;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #444752;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card-plan:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(115, 100, 204, 0.35);
+}
+
+/* Encabezado del card */
+.card-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-encabezado h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estados */
+.estado {
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.estado-activo {
+    background-color: #2ecc71;
+    color: #1c1f26;
+}
+
+.estado-inactivo {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Detalles del plan */
+.descripcion {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.info-plan p {
+    margin-bottom: 6px;
+    color: #bbb;
+}
+
+/* Botones dentro del card */
+.acciones {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    background-color: #7364cc;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #8a7ae3;
+}
+
+.btn.editar {
+    background-color: #3498db;
+}
+
+.btn.editar:hover {
+    background-color: #4aa7ea;
+}
+
+.btn.estado-toggle {
+    background-color: #e67e22;
+}
+
+.btn.estado-toggle:hover {
+    background-color: #f39c12;
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 768px) {
+    .contenedor {
+        margin-left: 70px;
+        padding: 20px;
+    }
+
+    .card-plan {
+        padding: 15px;
+    }
+}
